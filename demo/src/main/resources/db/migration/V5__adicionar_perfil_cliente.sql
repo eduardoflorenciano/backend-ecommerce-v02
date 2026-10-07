@@ -1,0 +1,9 @@
+ALTER TABLE cliente
+    ADD COLUMN perfil VARCHAR(20) DEFAULT 'CLIENTE';
+
+UPDATE cliente
+SET perfil = 'CLIENTE'
+WHERE perfil IS NULL;
+
+ALTER TABLE cliente
+    ALTER COLUMN perfil SET NOT NULL;

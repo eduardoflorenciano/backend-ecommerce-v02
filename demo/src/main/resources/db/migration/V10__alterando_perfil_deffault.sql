@@ -1,0 +1,6 @@
+UPDATE cliente
+SET perfil = 'DESTAIVADO'
+WHERE perfil IS NULL;
+
+ALTER TABLE cliente
+    ALTER COLUMN perfil SET NOT NULL;

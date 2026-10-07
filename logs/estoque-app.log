@@ -1,0 +1,322 @@
+2026-10-07 18:00:40 [main] INFO  c.a.demo.DemoApplication - Starting DemoApplication using Java 17.0.12 with PID 30152 (C:\Users\duduf\IdeaProjects\BackendPJ02-main\demo\target\classes started by duduf in C:\Users\duduf\IdeaProjects\BackendPJ02-main)
+2026-10-07 18:00:40 [main] INFO  c.a.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-07 18:00:42 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-07 18:00:42 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-10-07 18:00:42 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-07 18:00:42 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-07 18:00:42 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@14c99bf6
+2026-10-07 18:00:42 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-07 18:00:42 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-10-07 18:00:42 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-10-07 18:00:42 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2026-10-07 18:00:42 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/bdAutoCenterSilva (PostgreSQL 18.3)
+2026-10-07 18:00:42 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2026-10-07 18:00:42 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 11 migrations (execution time 00:00.054s)
+2026-10-07 18:00:42 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 11
+2026-10-07 18:00:42 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-10-07 18:00:42 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-07 18:00:43 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-10-07 18:00:43 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-07 18:00:43 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-07 18:00:44 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-07 18:00:45 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-07 18:00:46 [main] INFO  c.a.demo.DemoApplication - Started DemoApplication in 6.933 seconds (process running for 7.531)
+2026-10-07 18:02:59 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-07 18:03:00 [http-nio-8080-exec-1] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@3c9a2caa
+2026-10-07 18:03:00 [http-nio-8080-exec-1] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 18:03:46 [http-nio-8080-exec-4] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@1ffbd38b
+2026-10-07 18:03:46 [http-nio-8080-exec-2] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@cbe77fb
+2026-10-07 18:03:46 [http-nio-8080-exec-2] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 18:03:46 [http-nio-8080-exec-4] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 18:04:02 [http-nio-8080-exec-8] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@656b1a2
+2026-10-07 18:04:02 [http-nio-8080-exec-8] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 18:04:08 [http-nio-8080-exec-5] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@43d3a48b
+2026-10-07 18:04:08 [http-nio-8080-exec-5] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 18:25:55 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m42s679ms642µs300ns).
+2026-10-07 18:25:59 [http-nio-8080-exec-7] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@6a4eebfc
+2026-10-07 18:25:59 [http-nio-8080-exec-7] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 18:26:21 [http-nio-8080-exec-6] INFO  c.a.d.controller.ClientesController - Requisição recebida: POST -  /api/cliente/login com.autoCenterSilva.demo.dto.request.cliente.ClienteLoginRequest@7be8ed11
+2026-10-07 18:26:21 [http-nio-8080-exec-6] INFO  c.a.demo.service.ClientesService - Login realizado com sucesso! Florenciano
+2026-10-07 18:26:21 [http-nio-8080-exec-6] INFO  c.a.d.controller.ClientesController - Login valido: ClienteLoginResponse[id=1, nome=Florenciano, mensagem=Bem vindo: Florenciano - Login realizado com sucesso!]
+2026-10-07 18:26:24 [http-nio-8080-exec-3] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@1b9871ce
+2026-10-07 18:26:24 [http-nio-8080-exec-3] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 18:27:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-07 18:27:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-07 18:54:34 [main] INFO  c.a.demo.DemoApplication - Starting DemoApplication using Java 17.0.12 with PID 27448 (C:\Users\duduf\IdeaProjects\BackendPJ02-main\demo\target\classes started by duduf in C:\Users\duduf\IdeaProjects\BackendPJ02-main)
+2026-10-07 18:54:34 [main] INFO  c.a.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-07 18:54:35 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-07 18:54:35 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-10-07 18:54:35 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-07 18:54:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-07 18:54:35 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@38883a31
+2026-10-07 18:54:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-07 18:54:35 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-10-07 18:54:35 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-10-07 18:54:35 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2026-10-07 18:54:35 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/bdAutoCenterSilva (PostgreSQL 18.3)
+2026-10-07 18:54:35 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2026-10-07 18:54:35 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 11 migrations (execution time 00:00.040s)
+2026-10-07 18:54:36 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 11
+2026-10-07 18:54:36 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-10-07 18:54:36 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-07 18:54:36 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-10-07 18:54:36 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-07 18:54:36 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-07 18:54:37 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-07 18:54:38 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-07 18:54:39 [main] INFO  c.a.demo.DemoApplication - Started DemoApplication in 5.545 seconds (process running for 6.136)
+2026-10-07 18:55:04 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-07 18:55:05 [http-nio-8080-exec-1] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@733100f0
+2026-10-07 18:55:05 [http-nio-8080-exec-1] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 18:55:20 [http-nio-8080-exec-2] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@10917fa2
+2026-10-07 18:55:20 [http-nio-8080-exec-2] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 18:55:20 [http-nio-8080-exec-3] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@171095f8
+2026-10-07 18:55:20 [http-nio-8080-exec-3] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 18:55:44 [http-nio-8080-exec-4] INFO  c.a.d.controller.ClientesController - Requisição recebida: POST -  /api/cliente/login com.autoCenterSilva.demo.dto.request.cliente.ClienteLoginRequest@62716064
+2026-10-07 18:55:44 [http-nio-8080-exec-4] INFO  c.a.demo.service.ClientesService - Login realizado com sucesso! Florenciano
+2026-10-07 18:55:44 [http-nio-8080-exec-4] INFO  c.a.d.controller.ClientesController - Login valido: ClienteLoginResponse[id=1, nome=Florenciano, mensagem=Bem vindo: Florenciano - Login realizado com sucesso!]
+2026-10-07 18:55:47 [http-nio-8080-exec-5] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@4b4b023
+2026-10-07 18:55:47 [http-nio-8080-exec-5] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 18:56:04 [http-nio-8080-exec-6] INFO  c.a.d.controller.PedidosController - Requisição recebida: POST -  /api/pedidos/criar/com.autoCenterSilva.demo.dto.request.PedidoCreateRequest@2efb325
+2026-10-07 18:56:04 [http-nio-8080-exec-6] INFO  c.a.demo.service.PedidoService - Pedido salvo com sucesso!
+2026-10-07 19:00:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-07 19:00:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-07 19:01:25 [main] INFO  c.a.demo.DemoApplication - Starting DemoApplication using Java 17.0.12 with PID 39368 (C:\Users\duduf\IdeaProjects\BackendPJ02-main\demo\target\classes started by duduf in C:\Users\duduf\IdeaProjects\BackendPJ02-main)
+2026-10-07 19:01:25 [main] INFO  c.a.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-07 19:01:27 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-07 19:01:27 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-10-07 19:01:28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-07 19:01:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-07 19:01:28 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@616a06e3
+2026-10-07 19:01:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-07 19:01:28 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-10-07 19:01:28 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-10-07 19:01:28 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2026-10-07 19:01:28 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/bdAutoCenterSilva (PostgreSQL 18.3)
+2026-10-07 19:01:28 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2026-10-07 19:01:28 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 11 migrations (execution time 00:00.095s)
+2026-10-07 19:01:28 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 11
+2026-10-07 19:01:28 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-10-07 19:01:28 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-07 19:01:29 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-10-07 19:01:29 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-07 19:01:29 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-07 19:01:31 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-07 19:01:32 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-07 19:01:34 [main] INFO  c.a.demo.DemoApplication - Started DemoApplication in 9.595 seconds (process running for 10.488)
+2026-10-07 19:01:49 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-07 19:01:50 [http-nio-8080-exec-1] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@123e9575
+2026-10-07 19:01:50 [http-nio-8080-exec-1] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:02:11 [http-nio-8080-exec-2] INFO  c.a.d.controller.ClientesController - Requisição recebida: POST -  /api/cliente/login com.autoCenterSilva.demo.dto.request.cliente.ClienteLoginRequest@33ceb880
+2026-10-07 19:02:11 [http-nio-8080-exec-2] INFO  c.a.demo.service.ClientesService - Login realizado com sucesso! Florenciano
+2026-10-07 19:02:11 [http-nio-8080-exec-2] INFO  c.a.d.controller.ClientesController - Login valido: ClienteLoginResponse[id=1, nome=Florenciano, mensagem=Bem vindo: Florenciano - Login realizado com sucesso!]
+2026-10-07 19:02:14 [http-nio-8080-exec-3] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@5fa6664d
+2026-10-07 19:02:14 [http-nio-8080-exec-3] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:02:43 [http-nio-8080-exec-4] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@ad00e4e
+2026-10-07 19:02:43 [http-nio-8080-exec-5] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@58876420
+2026-10-07 19:02:43 [http-nio-8080-exec-4] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:02:43 [http-nio-8080-exec-5] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:02:56 [http-nio-8080-exec-6] INFO  c.a.d.controller.PedidosController - Requisição recebida: POST -  /api/pedidos/criar/com.autoCenterSilva.demo.dto.request.PedidoCreateRequest@17fe3429
+2026-10-07 19:02:56 [http-nio-8080-exec-6] INFO  c.a.demo.service.PedidoService - Pedido salvo com sucesso!
+2026-10-07 19:05:23 [http-nio-8080-exec-7] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@19d768b2
+2026-10-07 19:05:23 [http-nio-8080-exec-7] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:05:59 [http-nio-8080-exec-9] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@4b4b023
+2026-10-07 19:05:59 [http-nio-8080-exec-9] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:05:59 [http-nio-8080-exec-8] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@4863c41d
+2026-10-07 19:05:59 [http-nio-8080-exec-8] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:06:03 [http-nio-8080-exec-10] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@31720f70
+2026-10-07 19:06:03 [http-nio-8080-exec-10] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:06:07 [http-nio-8080-exec-1] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@6ea47847
+2026-10-07 19:06:07 [http-nio-8080-exec-2] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@79fb138f
+2026-10-07 19:06:07 [http-nio-8080-exec-1] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:06:07 [http-nio-8080-exec-2] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:06:11 [http-nio-8080-exec-3] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@32fd7d9f
+2026-10-07 19:06:11 [http-nio-8080-exec-3] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:06:13 [http-nio-8080-exec-4] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@4f1df278
+2026-10-07 19:06:13 [http-nio-8080-exec-5] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@d9de0e0
+2026-10-07 19:06:13 [http-nio-8080-exec-4] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:06:13 [http-nio-8080-exec-5] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:06:19 [http-nio-8080-exec-6] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@46d96ff4
+2026-10-07 19:06:19 [http-nio-8080-exec-6] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:08:20 [http-nio-8080-exec-7] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@5bec8ccc
+2026-10-07 19:08:20 [http-nio-8080-exec-7] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:08:21 [http-nio-8080-exec-9] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@3f93f2c7
+2026-10-07 19:08:21 [http-nio-8080-exec-9] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:08:36 [http-nio-8080-exec-8] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@515f53d2
+2026-10-07 19:08:36 [http-nio-8080-exec-8] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:11:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-07 19:11:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-07 19:12:42 [main] INFO  c.a.demo.DemoApplication - Starting DemoApplication using Java 17.0.12 with PID 41744 (C:\Users\duduf\IdeaProjects\BackendPJ02-main\demo\target\classes started by duduf in C:\Users\duduf\IdeaProjects\BackendPJ02-main)
+2026-10-07 19:12:42 [main] INFO  c.a.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-07 19:12:44 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-07 19:12:44 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-10-07 19:12:45 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-07 19:12:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-07 19:12:45 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@27a6fef2
+2026-10-07 19:12:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-07 19:12:45 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-10-07 19:12:45 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-10-07 19:12:45 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2026-10-07 19:12:45 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/bdAutoCenterSilva (PostgreSQL 18.3)
+2026-10-07 19:12:45 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2026-10-07 19:12:45 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 11 migrations (execution time 00:00.068s)
+2026-10-07 19:12:45 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 11
+2026-10-07 19:12:45 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-10-07 19:12:45 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-07 19:12:45 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-10-07 19:12:46 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-07 19:12:46 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-07 19:12:48 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-07 19:12:48 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-07 19:12:49 [main] INFO  c.a.demo.DemoApplication - Started DemoApplication in 7.907 seconds (process running for 8.58)
+2026-10-07 19:14:18 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-07 19:14:19 [http-nio-8080-exec-1] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@4a8b9a61
+2026-10-07 19:14:19 [http-nio-8080-exec-1] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:15:02 [http-nio-8080-exec-2] INFO  c.a.d.controller.ClientesController - Requisição recebida: POST -  /api/cliente/login com.autoCenterSilva.demo.dto.request.cliente.ClienteLoginRequest@b242c48
+2026-10-07 19:15:02 [http-nio-8080-exec-2] WARN  c.a.d.c.GlobalExceptionHandler - Erro de validação: Telefone informado está incorreto!
+2026-10-07 19:15:15 [http-nio-8080-exec-3] INFO  c.a.d.controller.ClientesController - Requisição recebida: POST -  /api/cliente/login com.autoCenterSilva.demo.dto.request.cliente.ClienteLoginRequest@10917fa2
+2026-10-07 19:15:15 [http-nio-8080-exec-3] INFO  c.a.demo.service.ClientesService - Login realizado com sucesso! Florenciano
+2026-10-07 19:15:15 [http-nio-8080-exec-3] INFO  c.a.d.controller.ClientesController - Login valido: ClienteLoginResponse[id=1, nome=Florenciano, mensagem=Bem vindo: Florenciano - Login realizado com sucesso!]
+2026-10-07 19:15:18 [http-nio-8080-exec-4] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@19d768b2
+2026-10-07 19:15:18 [http-nio-8080-exec-4] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:15:25 [http-nio-8080-exec-6] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@4b4b023
+2026-10-07 19:15:25 [http-nio-8080-exec-5] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@79920a5
+2026-10-07 19:15:25 [http-nio-8080-exec-6] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:15:25 [http-nio-8080-exec-5] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:15:36 [http-nio-8080-exec-7] INFO  c.a.d.controller.PedidosController - Requisição recebida: POST -  /api/pedidos/criar/com.autoCenterSilva.demo.dto.request.PedidoCreateRequest@2efb325
+2026-10-07 19:15:37 [http-nio-8080-exec-7] INFO  c.a.demo.service.PedidoService - Pedido salvo com sucesso!
+2026-10-07 19:16:17 [http-nio-8080-exec-8] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@162d05db
+2026-10-07 19:16:17 [http-nio-8080-exec-8] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:16:21 [http-nio-8080-exec-9] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@29184f72
+2026-10-07 19:16:21 [http-nio-8080-exec-10] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@399c7968
+2026-10-07 19:16:21 [http-nio-8080-exec-9] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:16:21 [http-nio-8080-exec-10] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:16:23 [http-nio-8080-exec-1] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@7a6ac8d7
+2026-10-07 19:16:23 [http-nio-8080-exec-1] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:01 [http-nio-8080-exec-2] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@7c0b8c20
+2026-10-07 19:17:01 [http-nio-8080-exec-3] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@25fee49f
+2026-10-07 19:17:01 [http-nio-8080-exec-2] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:01 [http-nio-8080-exec-3] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:03 [http-nio-8080-exec-4] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@6a4631c1
+2026-10-07 19:17:03 [http-nio-8080-exec-4] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:07 [http-nio-8080-exec-5] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@1928531d
+2026-10-07 19:17:07 [http-nio-8080-exec-6] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@17ca6c63
+2026-10-07 19:17:07 [http-nio-8080-exec-5] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:07 [http-nio-8080-exec-6] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:11 [http-nio-8080-exec-7] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@313e6652
+2026-10-07 19:17:11 [http-nio-8080-exec-7] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:14 [http-nio-8080-exec-8] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@78843ddd
+2026-10-07 19:17:14 [http-nio-8080-exec-8] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:14 [http-nio-8080-exec-9] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@6908c351
+2026-10-07 19:17:14 [http-nio-8080-exec-9] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:16 [http-nio-8080-exec-10] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@4289269
+2026-10-07 19:17:16 [http-nio-8080-exec-10] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:19 [http-nio-8080-exec-1] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@423df468
+2026-10-07 19:17:19 [http-nio-8080-exec-3] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@1a873a8c
+2026-10-07 19:17:19 [http-nio-8080-exec-3] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:19 [http-nio-8080-exec-1] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:26 [http-nio-8080-exec-2] INFO  c.a.d.controller.CotacaoController - Valor do produto com ID 6 covertido com sucesso! 
+2026-10-07 19:17:31 [http-nio-8080-exec-4] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@6174a778
+2026-10-07 19:17:31 [http-nio-8080-exec-4] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:34 [http-nio-8080-exec-5] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@3053d124
+2026-10-07 19:17:34 [http-nio-8080-exec-6] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@7e484f19
+2026-10-07 19:17:34 [http-nio-8080-exec-5] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:34 [http-nio-8080-exec-6] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:36 [http-nio-8080-exec-7] INFO  c.a.d.controller.CotacaoController - Valor do produto com ID 7 covertido com sucesso! 
+2026-10-07 19:17:39 [http-nio-8080-exec-8] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@349e450f
+2026-10-07 19:17:39 [http-nio-8080-exec-8] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:42 [http-nio-8080-exec-9] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@4404633a
+2026-10-07 19:17:42 [http-nio-8080-exec-10] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@2d776919
+2026-10-07 19:17:42 [http-nio-8080-exec-9] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:42 [http-nio-8080-exec-10] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:17:44 [http-nio-8080-exec-3] INFO  c.a.d.controller.CotacaoController - Valor do produto com ID 1 covertido com sucesso! 
+2026-10-07 19:17:56 [http-nio-8080-exec-1] INFO  c.a.d.controller.PedidosController - Requisição recebida: POST -  /api/pedidos/criar/com.autoCenterSilva.demo.dto.request.PedidoCreateRequest@6f10eaa4
+2026-10-07 19:17:56 [http-nio-8080-exec-1] INFO  c.a.demo.service.PedidoService - Pedido salvo com sucesso!
+2026-10-07 19:19:37 [http-nio-8080-exec-2] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@3da1f764
+2026-10-07 19:19:37 [http-nio-8080-exec-2] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:21:33 [http-nio-8080-exec-4] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@4a2524ce
+2026-10-07 19:21:33 [http-nio-8080-exec-4] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:21:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-07 19:21:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-07 19:46:43 [main] INFO  c.a.demo.DemoApplication - Starting DemoApplication using Java 17.0.12 with PID 41664 (C:\Users\duduf\IdeaProjects\BackendPJ02-main\demo\target\classes started by duduf in C:\Users\duduf\IdeaProjects\BackendPJ02-main)
+2026-10-07 19:46:44 [main] INFO  c.a.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-07 19:46:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-07 19:46:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-10-07 19:46:46 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-07 19:46:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-07 19:46:46 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@31f77791
+2026-10-07 19:46:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-07 19:46:46 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-10-07 19:46:46 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-10-07 19:46:46 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2026-10-07 19:46:46 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/bdAutoCenterSilva (PostgreSQL 18.3)
+2026-10-07 19:46:46 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2026-10-07 19:46:46 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 11 migrations (execution time 00:00.062s)
+2026-10-07 19:46:46 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 11
+2026-10-07 19:46:46 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-10-07 19:46:47 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-07 19:46:47 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-10-07 19:46:47 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-07 19:46:47 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-07 19:46:49 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-07 19:46:50 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-07 19:46:51 [main] INFO  c.a.demo.DemoApplication - Started DemoApplication in 7.941 seconds (process running for 8.606)
+2026-10-07 19:46:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-07 19:46:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-07 19:47:20 [main] INFO  c.a.demo.DemoApplication - Starting DemoApplication using Java 17.0.12 with PID 18068 (C:\Users\duduf\IdeaProjects\BackendPJ02-main\demo\target\classes started by duduf in C:\Users\duduf\IdeaProjects\BackendPJ02-main)
+2026-10-07 19:47:20 [main] INFO  c.a.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-07 19:47:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-07 19:47:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-10-07 19:47:22 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-07 19:47:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-07 19:47:23 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@707865bd
+2026-10-07 19:47:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-07 19:47:23 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-10-07 19:47:23 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-10-07 19:47:23 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2026-10-07 19:47:23 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/bdAutoCenterSilva (PostgreSQL 18.3)
+2026-10-07 19:47:23 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2026-10-07 19:47:23 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 11 migrations (execution time 00:00.046s)
+2026-10-07 19:47:23 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 11
+2026-10-07 19:47:23 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-10-07 19:47:23 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-07 19:47:23 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-10-07 19:47:23 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-07 19:47:23 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-07 19:47:25 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-07 19:47:26 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-07 19:47:27 [main] INFO  c.a.demo.DemoApplication - Started DemoApplication in 7.049 seconds (process running for 7.626)
+2026-10-07 19:47:51 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-07 19:47:52 [http-nio-8080-exec-1] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@4a8b9a61
+2026-10-07 19:47:52 [http-nio-8080-exec-1] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:48:18 [http-nio-8080-exec-2] WARN  c.a.d.c.GlobalExceptionHandler - Falha na validação de campos: telefone: Telefone é obrigatório
+2026-10-07 19:48:24 [http-nio-8080-exec-3] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@10917fa2
+2026-10-07 19:48:24 [http-nio-8080-exec-3] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:49:27 [http-nio-8080-exec-4] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@19d768b2
+2026-10-07 19:49:27 [http-nio-8080-exec-5] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@79920a5
+2026-10-07 19:49:27 [http-nio-8080-exec-4] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:49:27 [http-nio-8080-exec-5] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:49:57 [http-nio-8080-exec-7] INFO  c.a.d.controller.ClientesController - Requisição recebida: POST -  /api/cliente/login com.autoCenterSilva.demo.dto.request.cliente.ClienteLoginRequest@31720f70
+2026-10-07 19:49:57 [http-nio-8080-exec-7] INFO  c.a.demo.service.ClientesService - Login realizado com sucesso! Florenciano
+2026-10-07 19:49:57 [http-nio-8080-exec-7] INFO  c.a.d.controller.ClientesController - Login valido: ClienteLoginResponse[id=1, nome=Florenciano, mensagem=Bem-vindo: Florenciano - Login realizado com sucesso!]
+2026-10-07 19:50:03 [http-nio-8080-exec-8] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@162d05db
+2026-10-07 19:50:03 [http-nio-8080-exec-8] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:50:13 [http-nio-8080-exec-9] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@29184f72
+2026-10-07 19:50:13 [http-nio-8080-exec-9] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:50:17 [http-nio-8080-exec-10] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@399c7968
+2026-10-07 19:50:17 [http-nio-8080-exec-6] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@4b4b023
+2026-10-07 19:50:17 [http-nio-8080-exec-10] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:50:17 [http-nio-8080-exec-6] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:50:26 [http-nio-8080-exec-1] INFO  c.a.d.controller.PedidosController - Requisição recebida: POST -  /api/pedidos/criar/com.autoCenterSilva.demo.dto.request.PedidoCreateRequest@15f8b547
+2026-10-07 19:50:26 [http-nio-8080-exec-1] INFO  c.a.demo.service.PedidoService - Pedido salvo com sucesso!
+2026-10-07 19:50:58 [http-nio-8080-exec-2] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@6912ce8
+2026-10-07 19:50:58 [http-nio-8080-exec-2] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:51:02 [http-nio-8080-exec-4] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@5bec8ccc
+2026-10-07 19:51:02 [http-nio-8080-exec-3] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@23a1aafa
+2026-10-07 19:51:02 [http-nio-8080-exec-4] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:51:02 [http-nio-8080-exec-3] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:51:05 [http-nio-8080-exec-5] INFO  c.a.d.controller.CotacaoController - Valor do produto com ID 7 covertido com sucesso! 
+2026-10-07 19:51:10 [http-nio-8080-exec-7] INFO  c.a.d.controller.ProdutosController - Requisição recebida: POST - api/produtos/pesquisar com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest@44a655ae
+2026-10-07 19:51:10 [http-nio-8080-exec-7] INFO  c.a.demo.service.ProdutosService - Pesquisa realizada com sucesso!
+2026-10-07 19:54:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-07 19:54:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
