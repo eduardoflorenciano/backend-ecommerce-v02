@@ -1,7 +1,7 @@
 package com.autoCenterSilva.demo.dto.response.pedido;
 
-import com.autoCenterSilva.demo.dto.response.produto.ProdutoPedidoResponse;
-import com.autoCenterSilva.demo.entity.Pedido;
+import com.autocentersilva.demo.dto.response.produto.ProdutoPedidoResponse;
+import com.autocentersilva.demo.entity.Pedido;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

@@ -1,6 +1,6 @@
 package com.autoCenterSilva.demo.dto.response.produto;
 
-import com.autoCenterSilva.demo.entity.ProdutoVariacao;
+import com.autocentersilva.demo.entity.ProdutoVariacao;
 
 public record ProdutoVariacaoResponse
         (Long idVariacao, Long idProduto, String produtoNome, String mensagem)

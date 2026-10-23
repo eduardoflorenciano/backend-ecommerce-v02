@@ -20,7 +20,7 @@ public class Produtos {
     private String nome;
 
     @Column(name = "modelo")
-    String modelo;
+    private String modelo;
 
     @Column(name = "marca")
     private String marca;

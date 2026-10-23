@@ -1,6 +1,6 @@
 package com.autoCenterSilva.demo.dto.response.produto;
 
-import com.autoCenterSilva.demo.entity.Produtos;
+import com.autocentersilva.demo.entity.Produtos;
 
 public record ProdutoCreateResponse(Long id,
                                     String nome,

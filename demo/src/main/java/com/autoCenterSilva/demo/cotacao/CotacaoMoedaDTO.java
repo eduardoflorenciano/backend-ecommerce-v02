@@ -4,14 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CotacaoMoedaDTO {
     @JsonProperty("USDBRL")
-    private DadosMoeda USDBRL;
+    private DadosMoeda usdBrl;
 
-    public DadosMoeda getUSDBRL() {
-        return USDBRL;
+    public DadosMoeda getUsdBrl() {
+        return usdBrl;
     }
 
-    public void setUSDBRL(DadosMoeda USDBRL) {
-        this.USDBRL = USDBRL;
+    public void setUsdBrl(DadosMoeda usdBrl) {
+        this.usdBrl = usdBrl;
     }
 
     public static class DadosMoeda {

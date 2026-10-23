@@ -1,7 +1,7 @@
 package com.autoCenterSilva.demo.dto.response.produto;
 
-import com.autoCenterSilva.demo.dto.response.carro.CarroPesquisaMedidaResponse;
-import com.autoCenterSilva.demo.entity.ProdutoVariacao;
+import com.autocentersilva.demo.dto.response.carro.CarroBuscaResponse;
+import com.autocentersilva.demo.entity.ProdutoVariacao;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -16,12 +16,12 @@ public record ProdutoVariacaoPesquisaResponse(
         Integer indiceCarga,
         BigDecimal preco,
         Integer quantidadeEstoque,
-        List<CarroPesquisaMedidaResponse> carrosCompativeis
+        List<CarroBuscaResponse> carrosCompativeis
 ) {
 
     public static ProdutoVariacaoPesquisaResponse de(ProdutoVariacao variacao) {
-        List<CarroPesquisaMedidaResponse> carros = variacao.getCarros().stream()
-                .map(CarroPesquisaMedidaResponse::de)
+        List<CarroBuscaResponse> carros = variacao.getCarros().stream()
+                .map(CarroBuscaResponse::de)
                 .toList();
 
         return new ProdutoVariacaoPesquisaResponse(

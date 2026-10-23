@@ -1,11 +1,10 @@
 package com.autoCenterSilva.demo.controller;
 
-import com.autoCenterSilva.demo.service.CotacaoService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import com.autocentersilva.demo.service.CotacaoService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 
@@ -13,14 +12,14 @@ import java.math.BigDecimal;
 @RequestMapping("/cotacao")
 public class CotacaoController {
 
-    private static final Logger log = LoggerFactory.getLogger(CotacaoController.class);
+    private final CotacaoService cotacaoService;
 
-    @Autowired
-    private CotacaoService cotacaoService;
+    public CotacaoController(CotacaoService cotacaoService) {
+        this.cotacaoService = cotacaoService;
+    }
 
     @GetMapping("/produto/{id}/converter-para-reais")
-    public BigDecimal converterPrecoProdutoParaReais(@PathVariable Long id) {
-        log.info("Valor do produto com ID {} covertido com sucesso! ", id);
+    public BigDecimal converterPrecoProdutoParaDolar(@PathVariable Long id) {
         return cotacaoService.converterPrecoProdutoParaDolar(id);
     }
 }
