@@ -1,6 +1,6 @@
 package com.autoCenterSilva.demo.controller;
 
-import com.autocentersilva.demo.dto.response.validacao.ErroValidacoesResponse;
+import com.autoCenterSilva.demo.dto.response.validacao.ErroValidacoesResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;

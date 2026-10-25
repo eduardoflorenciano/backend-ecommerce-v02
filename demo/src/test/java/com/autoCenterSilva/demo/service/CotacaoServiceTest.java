@@ -1,10 +1,10 @@
 package com.autoCenterSilva.demo.service;
 
-import com.autocentersilva.demo.cotacao.CotacaoMoedaClient;
-import com.autocentersilva.demo.cotacao.CotacaoMoedaDTO;
-import com.autocentersilva.demo.entity.ProdutoVariacao;
-import com.autocentersilva.demo.exception.ResourceNotFoundException;
-import com.autocentersilva.demo.repository.ProdutoVaricaoRepository;
+import com.autoCenterSilva.demo.cotacao.CotacaoMoedaClient;
+import com.autoCenterSilva.demo.cotacao.CotacaoMoedaDTO;
+import com.autoCenterSilva.demo.entity.ProdutoVariacao;
+import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
+import com.autoCenterSilva.demo.repository.ProdutoVaricaoRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

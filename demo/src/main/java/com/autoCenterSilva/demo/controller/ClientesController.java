@@ -1,11 +1,11 @@
 package com.autoCenterSilva.demo.controller;
 
-import com.autocentersilva.demo.dto.request.cliente.ClienteAtualizaRequest;
-import com.autocentersilva.demo.dto.request.cliente.ClienteCreatRequest;
-import com.autocentersilva.demo.dto.request.cliente.ClienteLoginRequest;
-import com.autocentersilva.demo.dto.response.cliente.*;
-import com.autocentersilva.demo.entity.PerfilUsuario;
-import com.autocentersilva.demo.service.ClientesService;
+import com.autoCenterSilva.demo.dto.request.cliente.ClienteAtualizaRequest;
+import com.autoCenterSilva.demo.dto.request.cliente.ClienteCreatRequest;
+import com.autoCenterSilva.demo.dto.request.cliente.ClienteLoginRequest;
+import com.autoCenterSilva.demo.dto.response.cliente.*;
+import com.autoCenterSilva.demo.entity.PerfilUsuario;
+import com.autoCenterSilva.demo.service.ClientesService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

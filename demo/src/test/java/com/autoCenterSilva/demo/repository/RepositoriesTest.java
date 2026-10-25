@@ -1,6 +1,6 @@
 package com.autoCenterSilva.demo.repository;
 
-import com.autocentersilva.demo.entity.*;
+import com.autoCenterSilva.demo.entity.*;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

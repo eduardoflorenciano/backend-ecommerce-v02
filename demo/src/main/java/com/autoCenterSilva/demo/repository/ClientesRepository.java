@@ -1,7 +1,7 @@
 package com.autoCenterSilva.demo.repository;
 
-import com.autocentersilva.demo.entity.Cliente;
-import com.autocentersilva.demo.entity.PerfilUsuario;
+import com.autoCenterSilva.demo.entity.Cliente;
+import com.autoCenterSilva.demo.entity.PerfilUsuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

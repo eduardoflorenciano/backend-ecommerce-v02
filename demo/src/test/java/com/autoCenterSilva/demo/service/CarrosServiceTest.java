@@ -1,14 +1,14 @@
 package com.autoCenterSilva.demo.service;
 
-import com.autocentersilva.demo.dto.request.carro.CarroCreateRequest;
-import com.autocentersilva.demo.dto.response.carro.CarroBuscaResponse;
-import com.autocentersilva.demo.dto.response.carro.CarroCreateResponse;
-import com.autocentersilva.demo.entity.Carros;
-import com.autocentersilva.demo.entity.ProdutoVariacao;
-import com.autocentersilva.demo.exception.RegraNegocioException;
-import com.autocentersilva.demo.exception.ResourceNotFoundException;
-import com.autocentersilva.demo.repository.CarrosRepository;
-import com.autocentersilva.demo.repository.ProdutoVaricaoRepository;
+import com.autoCenterSilva.demo.dto.request.carro.CarroCreateRequest;
+import com.autoCenterSilva.demo.dto.response.carro.CarroBuscaResponse;
+import com.autoCenterSilva.demo.dto.response.carro.CarroCreateResponse;
+import com.autoCenterSilva.demo.entity.Carros;
+import com.autoCenterSilva.demo.entity.ProdutoVariacao;
+import com.autoCenterSilva.demo.exception.RegraNegocioException;
+import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
+import com.autoCenterSilva.demo.repository.CarrosRepository;
+import com.autoCenterSilva.demo.repository.ProdutoVaricaoRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;

@@ -1,6 +1,6 @@
 package com.autoCenterSilva.demo.dto.request;
 
-import com.autocentersilva.demo.dto.request.produto.ProdutoPedidoRequest;
+import com.autoCenterSilva.demo.dto.request.produto.ProdutoPedidoRequest;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;

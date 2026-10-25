@@ -1,6 +1,6 @@
 package com.autoCenterSilva.demo.dto.response.cliente;
 
-import com.autocentersilva.demo.entity.Cliente;
+import com.autoCenterSilva.demo.entity.Cliente;
 
 public record ClienteCreateResponse
         (Long id,

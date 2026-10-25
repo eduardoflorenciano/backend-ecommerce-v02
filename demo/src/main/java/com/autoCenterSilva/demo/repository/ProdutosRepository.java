@@ -1,6 +1,6 @@
 package com.autoCenterSilva.demo.repository;
 
-import com.autocentersilva.demo.entity.Produtos;
+import com.autoCenterSilva.demo.entity.Produtos;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

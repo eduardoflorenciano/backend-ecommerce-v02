@@ -1,6 +1,6 @@
 package com.autoCenterSilva.demo.dto.response.cliente;
 
-import com.autocentersilva.demo.entity.Cliente;
+import com.autoCenterSilva.demo.entity.Cliente;
 
 public record ClienteBuscaResponse(Long id, String nome, String telefone, String message) {
     public static ClienteBuscaResponse de(Cliente cliente) {

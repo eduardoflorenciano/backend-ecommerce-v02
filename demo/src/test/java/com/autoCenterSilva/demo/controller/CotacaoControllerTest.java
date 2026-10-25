@@ -1,7 +1,7 @@
 package com.autoCenterSilva.demo.controller;
 
-import com.autocentersilva.demo.exception.ResourceNotFoundException;
-import com.autocentersilva.demo.service.CotacaoService;
+import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
+import com.autoCenterSilva.demo.service.CotacaoService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

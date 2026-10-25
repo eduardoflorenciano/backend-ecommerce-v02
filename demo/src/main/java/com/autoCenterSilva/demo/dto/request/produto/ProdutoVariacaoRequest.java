@@ -1,6 +1,5 @@
 package com.autoCenterSilva.demo.dto.request.produto;
 
-
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;

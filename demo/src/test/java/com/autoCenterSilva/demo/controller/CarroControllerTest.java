@@ -1,10 +1,10 @@
 package com.autoCenterSilva.demo.controller;
 
-import com.autocentersilva.demo.dto.response.carro.CarroBuscaResponse;
-import com.autocentersilva.demo.dto.response.carro.CarroCreateResponse;
-import com.autocentersilva.demo.exception.RegraNegocioException;
-import com.autocentersilva.demo.exception.ResourceNotFoundException;
-import com.autocentersilva.demo.service.CarrosService;
+import com.autoCenterSilva.demo.dto.response.carro.CarroBuscaResponse;
+import com.autoCenterSilva.demo.dto.response.carro.CarroCreateResponse;
+import com.autoCenterSilva.demo.exception.RegraNegocioException;
+import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
+import com.autoCenterSilva.demo.service.CarrosService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -24,8 +24,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.startsWith;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.argThat;
-import static org.mockito.BDDMockito.given;
-import static org.mockito.BDDMockito.then;
+import static org.mockito.BDDMockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 

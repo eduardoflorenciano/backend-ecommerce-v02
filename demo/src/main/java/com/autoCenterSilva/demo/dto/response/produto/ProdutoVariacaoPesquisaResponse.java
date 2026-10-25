@@ -1,7 +1,7 @@
 package com.autoCenterSilva.demo.dto.response.produto;
 
-import com.autocentersilva.demo.dto.response.carro.CarroBuscaResponse;
-import com.autocentersilva.demo.entity.ProdutoVariacao;
+import com.autoCenterSilva.demo.dto.response.carro.CarroBuscaResponse;
+import com.autoCenterSilva.demo.entity.ProdutoVariacao;
 
 import java.math.BigDecimal;
 import java.util.List;

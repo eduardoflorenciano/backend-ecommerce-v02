@@ -1,11 +1,11 @@
 package com.autoCenterSilva.demo.controller;
 
-import com.autocentersilva.demo.dto.response.pedido.PedidoCreateResponse;
-import com.autocentersilva.demo.dto.response.pedido.PedidosListagemResponse;
-import com.autocentersilva.demo.dto.response.produto.ProdutoPedidoResponse;
-import com.autocentersilva.demo.exception.RegraNegocioException;
-import com.autocentersilva.demo.exception.ResourceNotFoundException;
-import com.autocentersilva.demo.service.PedidoService;
+import com.autoCenterSilva.demo.dto.response.pedido.PedidoCreateResponse;
+import com.autoCenterSilva.demo.dto.response.pedido.PedidosListagemResponse;
+import com.autoCenterSilva.demo.dto.response.produto.ProdutoPedidoResponse;
+import com.autoCenterSilva.demo.exception.RegraNegocioException;
+import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
+import com.autoCenterSilva.demo.service.PedidoService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

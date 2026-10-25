@@ -1,9 +1,9 @@
 package com.autoCenterSilva.demo.controller;
 
-import com.autocentersilva.demo.dto.request.PedidoCreateRequest;
-import com.autocentersilva.demo.dto.response.pedido.PedidoCreateResponse;
-import com.autocentersilva.demo.dto.response.pedido.PedidosListagemResponse;
-import com.autocentersilva.demo.service.PedidoService;
+import com.autoCenterSilva.demo.dto.request.PedidoCreateRequest;
+import com.autoCenterSilva.demo.dto.response.pedido.PedidoCreateResponse;
+import com.autoCenterSilva.demo.dto.response.pedido.PedidosListagemResponse;
+import com.autoCenterSilva.demo.service.PedidoService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

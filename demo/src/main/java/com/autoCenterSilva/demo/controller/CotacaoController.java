@@ -1,6 +1,6 @@
 package com.autoCenterSilva.demo.controller;
 
-import com.autocentersilva.demo.service.CotacaoService;
+import com.autoCenterSilva.demo.service.CotacaoService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

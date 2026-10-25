@@ -1,13 +1,13 @@
 package com.autoCenterSilva.demo.controller;
 
-import com.autocentersilva.demo.dto.request.ProdutoMedidaPesquisaRequest;
-import com.autocentersilva.demo.dto.request.produto.ProdutoCreateRequest;
-import com.autocentersilva.demo.dto.request.produto.ProdutoVariacaoRequest;
-import com.autocentersilva.demo.dto.response.produto.ProdutoCreateResponse;
-import com.autocentersilva.demo.dto.response.produto.ProdutoListagemResponse;
-import com.autocentersilva.demo.dto.response.produto.ProdutoVariacaoPesquisaResponse;
-import com.autocentersilva.demo.dto.response.produto.ProdutoVariacaoResponse;
-import com.autocentersilva.demo.service.ProdutosService;
+import com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest;
+import com.autoCenterSilva.demo.dto.request.produto.ProdutoCreateRequest;
+import com.autoCenterSilva.demo.dto.request.produto.ProdutoVariacaoRequest;
+import com.autoCenterSilva.demo.dto.response.produto.ProdutoCreateResponse;
+import com.autoCenterSilva.demo.dto.response.produto.ProdutoListagemResponse;
+import com.autoCenterSilva.demo.dto.response.produto.ProdutoVariacaoPesquisaResponse;
+import com.autoCenterSilva.demo.dto.response.produto.ProdutoVariacaoResponse;
+import com.autoCenterSilva.demo.service.ProdutosService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

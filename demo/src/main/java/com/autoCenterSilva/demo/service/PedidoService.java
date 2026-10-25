@@ -1,15 +1,15 @@
 package com.autoCenterSilva.demo.service;
 
-import com.autocentersilva.demo.dto.request.PedidoCreateRequest;
-import com.autocentersilva.demo.dto.request.produto.ProdutoPedidoRequest;
-import com.autocentersilva.demo.dto.response.pedido.PedidoCreateResponse;
-import com.autocentersilva.demo.dto.response.pedido.PedidosListagemResponse;
-import com.autocentersilva.demo.entity.*;
-import com.autocentersilva.demo.exception.RegraNegocioException;
-import com.autocentersilva.demo.exception.ResourceNotFoundException;
-import com.autocentersilva.demo.repository.ClientesRepository;
-import com.autocentersilva.demo.repository.PedidoRepository;
-import com.autocentersilva.demo.repository.ProdutoVaricaoRepository;
+import com.autoCenterSilva.demo.dto.request.PedidoCreateRequest;
+import com.autoCenterSilva.demo.dto.request.produto.ProdutoPedidoRequest;
+import com.autoCenterSilva.demo.dto.response.pedido.PedidoCreateResponse;
+import com.autoCenterSilva.demo.dto.response.pedido.PedidosListagemResponse;
+import com.autoCenterSilva.demo.entity.*;
+import com.autoCenterSilva.demo.exception.RegraNegocioException;
+import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
+import com.autoCenterSilva.demo.repository.ClientesRepository;
+import com.autoCenterSilva.demo.repository.PedidoRepository;
+import com.autoCenterSilva.demo.repository.ProdutoVaricaoRepository;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
