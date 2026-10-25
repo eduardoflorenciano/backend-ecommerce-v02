@@ -1,7 +1,6 @@
 package com.autoCenterSilva.demo.dto.response.produto;
 
 import com.autoCenterSilva.demo.entity.ProdutoVariacao;
-import com.autoCenterSilva.demo.entity.Produtos;
 
 import java.math.BigDecimal;
 

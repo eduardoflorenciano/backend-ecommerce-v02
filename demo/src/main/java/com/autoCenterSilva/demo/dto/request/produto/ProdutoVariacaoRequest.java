@@ -1,7 +1,9 @@
 package com.autoCenterSilva.demo.dto.request.produto;
 
-
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,6 +36,7 @@ public class ProdutoVariacaoRequest {
     @Positive(message = "Preço deve ser positivo")
     private BigDecimal preco;
 
+    @NotNull(message = "Quantidade de estoque é obrigatória")
     @Min(value = 4, message = "Quantidade de estoque mínimo é 4")
     private Integer quantidadeEstoque;
 }
