@@ -50,6 +50,7 @@ class ClientesServiceTest {
     class Consulta {
 
         @Test
+        @DisplayName("Deve retornar todos os clientes quando listar sem filtro")
         void deveRetornarTodosOsClientes_quandoListarSemFiltro() {
 
             Cliente cliente = clienteAtivo();
@@ -61,6 +62,7 @@ class ClientesServiceTest {
         }
 
         @Test
+        @DisplayName("Deve retornar dados do cliente quando ID existir")
         void deveRetornarDadosDoCliente_quandoIdExistir() {
 
             given(repository.findById(1L)).willReturn(Optional.of(clienteAtivo()));
@@ -74,6 +76,7 @@ class ClientesServiceTest {
         }
 
         @Test
+        @DisplayName("Deve lançar não encontrado quando ID não existir")
         void deveLancarNaoEncontrado_quandoIdNaoExistir() {
 
             given(repository.findById(99L)).willReturn(Optional.empty());
@@ -84,6 +87,7 @@ class ClientesServiceTest {
         }
 
         @Test
+        @DisplayName("Deve filtrar pelo perfil informado quando buscar disponíveis")
         void deveFiltrarPeloPerfilInformado_quandoBuscarDisponiveis() {
 
             Cliente cliente = clienteAtivo();
@@ -101,6 +105,7 @@ class ClientesServiceTest {
     class Cadastro {
 
         @Test
+        @DisplayName("Deve salvar cliente desativado quando dados forem válidos e únicos")
         void deveSalvarClienteDesativado_quandoDadosForemValidosEUnicos() {
 
             ClienteCreatRequest request = cadastro("senha123", "senha123");
@@ -126,6 +131,7 @@ class ClientesServiceTest {
         }
 
         @Test
+        @DisplayName("Deve recusar sem consultar banco quando senhas não coincidirem")
         void deveRecusarSemConsultarBanco_quandoSenhasNaoCoincidirem() {
 
             ClienteCreatRequest request = cadastro("senha123", "outra123");
@@ -138,6 +144,7 @@ class ClientesServiceTest {
         }
 
         @Test
+        @DisplayName("Deve recusar sem salvar quando nome já existir")
         void deveRecusarSemSalvar_quandoNomeJaExistir() {
 
             ClienteCreatRequest request = cadastro("senha123", "senha123");
@@ -150,6 +157,7 @@ class ClientesServiceTest {
         }
 
         @Test
+        @DisplayName("Deve recusar sem salvar quando telefone já existir")
         void deveRecusarSemSalvar_quandoTelefoneJaExistir() {
 
             ClienteCreatRequest request = cadastro("senha123", "senha123");
@@ -168,6 +176,7 @@ class ClientesServiceTest {
     class Login {
 
         @Test
+        @DisplayName("Deve ativar perfil e salvar quando credenciais forem válidas")
         void deveAtivarPerfilESalvar_quandoCredenciaisForemValidas() {
 
             Cliente cliente = clienteDesativado();
@@ -183,6 +192,7 @@ class ClientesServiceTest {
         }
 
         @Test
+        @DisplayName("Deve lançar credenciais inválidas quando telefone não existir")
         void deveLancarCredenciaisInvalidas_quandoTelefoneNaoExistir() {
 
             given(repository.findByTelefone(TELEFONE)).willReturn(Optional.empty());
@@ -195,6 +205,7 @@ class ClientesServiceTest {
 
         @ParameterizedTest(name = "nome={0}, senha={1}")
         @CsvSource({"Flor, errada123", "Outro, senha123"})
+        @DisplayName("Deve manter perfil desativado quando nome ou senha não conferirem")
         void deveManterPerfilDesativado_quandoNomeOuSenhaNaoConferirem(String nome, String senha) {
 
             Cliente cliente = clienteDesativado();
@@ -214,6 +225,7 @@ class ClientesServiceTest {
     class AtualizacaoSenha {
 
         @Test
+        @DisplayName("Deve alterar senha quando nome conferir e senhas coincidirem")
         void deveAlterarSenha_quandoNomeConferirESenhasCoincidirem() {
 
             Cliente cliente = clienteAtivo();
@@ -228,6 +240,7 @@ class ClientesServiceTest {
         }
 
         @Test
+        @DisplayName("Deve lançar credenciais inválidas quando nome for diferente")
         void deveLancarCredenciaisInvalidas_quandoNomeForDiferente() {
 
             Cliente cliente = clienteAtivo();
@@ -241,6 +254,7 @@ class ClientesServiceTest {
         }
 
         @Test
+        @DisplayName("Deve manter senha antiga quando confirmação for diferente")
         void deveManterSenhaAntiga_quandoConfirmacaoForDiferente() {
 
             Cliente cliente = clienteAtivo();
@@ -255,6 +269,7 @@ class ClientesServiceTest {
         }
 
         @Test
+        @DisplayName("Deve lançar não encontrado quando cliente não existir na atualização")
         void deveLancarNaoEncontrado_quandoClienteNaoExistirNaAtualizacao() {
 
             given(repository.findById(5L)).willReturn(Optional.empty());
@@ -270,6 +285,7 @@ class ClientesServiceTest {
     class Desativacao {
 
         @Test
+        @DisplayName("Deve desativar perfil quando cliente não tiver pedidos")
         void deveDesativarPerfil_quandoClienteNaoTiverPedidos() {
 
             Cliente cliente = clienteAtivo();
@@ -283,6 +299,7 @@ class ClientesServiceTest {
         }
 
         @Test
+        @DisplayName("Deve manter perfil ativo quando cliente tiver pedido em aberto")
         void deveManterPerfilAtivo_quandoClienteTiverPedidoEmAberto() {
 
             Cliente cliente = clienteAtivo();
@@ -297,6 +314,7 @@ class ClientesServiceTest {
         }
 
         @Test
+        @DisplayName("Deve lançar não encontrado quando desativar cliente inexistente")
         void deveLancarNaoEncontrado_quandoDesativarClienteInexistente() {
 
             given(repository.findById(5L)).willReturn(Optional.empty());

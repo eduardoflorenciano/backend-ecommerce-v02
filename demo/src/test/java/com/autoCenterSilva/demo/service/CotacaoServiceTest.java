@@ -5,6 +5,7 @@ import com.autoCenterSilva.demo.cotacao.CotacaoMoedaDTO;
 import com.autoCenterSilva.demo.entity.ProdutoVariacao;
 import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
 import com.autoCenterSilva.demo.repository.ProdutoVaricaoRepository;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -32,20 +33,20 @@ class CotacaoServiceTest {
     private CotacaoService service;
 
     @Test
+    @DisplayName("Deve dividir preço pela cotação com duas casas quando produto existir")
     void deveDividirPrecoPelaCotacaoComDuasCasas_quandoProdutoExistir() {
 
         given(repository.findById(1L)).willReturn(Optional.of(variacaoComPreco("100.00")));
         given(client.obterCotacaoDolar()).willReturn(cotacao("3.00"));
 
-
         BigDecimal precoEmDolar = service.converterPrecoProdutoParaDolar(1L);
-
 
         assertThat(precoEmDolar).isEqualByComparingTo("33.33");
         assertThat(precoEmDolar.scale()).isEqualTo(2);
     }
 
     @Test
+    @DisplayName("Deve lançar não encontrado sem chamar API quando produto não existir")
     void deveLancarNaoEncontradoSemChamarApi_quandoProdutoNaoExistir() {
 
         given(repository.findById(88L)).willReturn(Optional.empty());
@@ -57,6 +58,7 @@ class CotacaoServiceTest {
     }
 
     @Test
+    @DisplayName("Deve propagar erro quando serviço externo de cotação falhar")
     void devePropagarErro_quandoServicoExternoDeCotacaoFalhar() {
 
         given(repository.findById(1L)).willReturn(Optional.of(variacaoComPreco("25.00")));

@@ -16,6 +16,7 @@ import com.autoCenterSilva.demo.repository.ClientesRepository;
 import com.autoCenterSilva.demo.repository.PedidoRepository;
 import com.autoCenterSilva.demo.repository.ProdutoVaricaoRepository;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -58,6 +59,7 @@ class PedidoServiceTest {
     }
 
     @Test
+    @DisplayName("Deve calcular total, baixar estoque e gerar link quando pedido for válido")
     void deveCalcularTotalBaixarEstoqueEGerarLink_quandoPedidoForValido() {
 
         ProdutoVariacao pneuA = variacao(20L, 5, "100.00");
@@ -94,6 +96,7 @@ class PedidoServiceTest {
     }
 
     @Test
+    @DisplayName("Deve associar itens ao pedido com preço unitário quando pedido for salvo")
     void deveAssociarItensAoPedidoComPrecoUnitario_quandoPedidoForSalvo() {
 
         given(clientesRepository.findById(3L)).willReturn(Optional.of(cliente(PerfilUsuario.CLIENTE)));
@@ -112,6 +115,7 @@ class PedidoServiceTest {
     }
 
     @Test
+    @DisplayName("Deve lançar não encontrado sem salvar quando cliente não existir")
     void deveLancarNaoEncontradoSemSalvar_quandoClienteNaoExistir() {
 
         PedidoCreateRequest request = pedido(50L, item(20L, 1));
@@ -125,6 +129,7 @@ class PedidoServiceTest {
     }
 
     @Test
+    @DisplayName("Deve recusar pedido quando perfil do cliente estiver desativado")
     void deveRecusarPedido_quandoPerfilDoClienteEstiverDesativado() {
 
         PedidoCreateRequest request = pedido(3L, item(20L, 1));
@@ -137,6 +142,7 @@ class PedidoServiceTest {
     }
 
     @Test
+    @DisplayName("Deve lançar não encontrado sem salvar pedido quando variação não existir")
     void deveLancarNaoEncontradoSemSalvarPedido_quandoVariacaoNaoExistir() {
 
         PedidoCreateRequest request = pedido(3L, item(99L, 1));
@@ -150,6 +156,7 @@ class PedidoServiceTest {
     }
 
     @Test
+    @DisplayName("Deve manter estoque e sem salvar quando quantidade exceder estoque")
     void deveManterEstoqueESemSalvar_quandoQuantidadeExcederEstoque() {
 
         ProdutoVariacao variacao = variacao(20L, 2, "100.00");
@@ -166,6 +173,7 @@ class PedidoServiceTest {
     }
 
     @Test
+    @DisplayName("Deve retornar uma linha por item quando listar pedidos")
     void deveRetornarUmaLinhaPorItem_quandoListarPedidos() {
 
         Pedido pedido = new Pedido();
@@ -188,6 +196,7 @@ class PedidoServiceTest {
     }
 
     @Test
+    @DisplayName("Deve retornar lista vazia quando não houver pedidos")
     void deveRetornarListaVazia_quandoNaoHouverPedidos() {
 
         given(pedidoRepository.findAll()).willReturn(List.of());
