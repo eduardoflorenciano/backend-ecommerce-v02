@@ -5,6 +5,7 @@ import com.autoCenterSilva.demo.cotacao.CotacaoMoedaDTO;
 import com.autoCenterSilva.demo.entity.ProdutoVariacao;
 import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
 import com.autoCenterSilva.demo.repository.ProdutoVaricaoRepository;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

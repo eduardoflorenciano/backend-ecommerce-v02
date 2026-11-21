@@ -9,6 +9,7 @@ import com.autoCenterSilva.demo.dto.response.cliente.ClienteCreateResponse;
 import com.autoCenterSilva.demo.dto.response.cliente.ClienteLoginResponse;
 import com.autoCenterSilva.demo.entity.Cliente;
 import com.autoCenterSilva.demo.entity.PerfilUsuario;
+import com.autoCenterSilva.demo.entity.StatusPedido;
 import com.autoCenterSilva.demo.exception.CredenciaisInvalidasException;
 import com.autoCenterSilva.demo.exception.RegraNegocioException;
 import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
@@ -92,8 +93,8 @@ public class ClientesService {
     @Transactional
     public void desativarCliente(Long id) {
         Cliente cliente = buscarCliente(id);
-        if (clientesRepository.existsByIdAndPedidosIsNotEmpty(id)) {
-            throw new RegraNegocioException("Cliente está com um pedido de venda em aberto! Não é possível excluir!");
+        if (clientesRepository.existsByIdAndPedidosStatus(id, StatusPedido.SOLICITADO)) {
+            throw new RegraNegocioException("Cliente está com um pedido de venda em que Solicitado porem não foi efetuado pagamento! Não é possível excluir!");
         }
         cliente.setPerfil(PerfilUsuario.DESATIVADO);
         clientesRepository.save(cliente);

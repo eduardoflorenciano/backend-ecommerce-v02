@@ -1,6 +1,6 @@
 package com.autoCenterSilva.demo.service;
 
-import com.autoCenterSilva.demo.dto.request.PedidoCreateRequest;
+import com.autoCenterSilva.demo.dto.request.pedido.PedidoCreateRequest;
 import com.autoCenterSilva.demo.dto.request.produto.ProdutoPedidoRequest;
 import com.autoCenterSilva.demo.dto.response.pedido.PedidoCreateResponse;
 import com.autoCenterSilva.demo.dto.response.pedido.PedidosListagemResponse;
