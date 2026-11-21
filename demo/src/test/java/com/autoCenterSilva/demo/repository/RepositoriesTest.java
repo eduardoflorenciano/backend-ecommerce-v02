@@ -1,7 +1,6 @@
 package com.autoCenterSilva.demo.repository;
 
 import com.autoCenterSilva.demo.entity.*;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +28,6 @@ class RepositoriesTest {
         private ClientesRepository repository;
 
         @Test
-        @DisplayName("Deve retornar somente clientes do perfil quando filtrar por perfil")
         void deveRetornarSomenteClientesDoPerfil_quandoFiltrarPorPerfil() {
 
             Cliente ativo = em.persist(cliente("Ana", "45900000001", PerfilUsuario.CLIENTE));
@@ -42,7 +40,6 @@ class RepositoriesTest {
         }
 
         @Test
-        @DisplayName("Deve encontrar cliente quando buscar por telefone cadastrado")
         void deveEncontrarCliente_quandoBuscarPorTelefoneCadastrado() {
 
             em.persistAndFlush(cliente("Ana", "45900000001", PerfilUsuario.CLIENTE));
@@ -53,7 +50,6 @@ class RepositoriesTest {
         }
 
         @Test
-        @DisplayName("Deve indicar existência por nome e telefone quando o cliente estiver cadastrado")
         void deveIndicarExistenciaPorNomeETelefone_quandoClienteEstiverCadastrado() {
 
             em.persistAndFlush(cliente("Ana", "45900000001", PerfilUsuario.CLIENTE));
@@ -68,7 +64,6 @@ class RepositoriesTest {
         }
 
         @Test
-        @DisplayName("Deve indicar pedidos em aberto quando cliente possuir pedido")
         void deveIndicarPedidosEmAberto_quandoClientePossuirPedido() {
 
             Cliente comPedido = em.persist(cliente("Ana", "45900000001", PerfilUsuario.CLIENTE));
@@ -94,7 +89,6 @@ class RepositoriesTest {
         private ProdutosRepository repository;
 
         @Test
-        @DisplayName("Deve retornar somente produtos ativos quando filtrar por ativo")
         void deveRetornarSomenteProdutosAtivos_quandoFiltrarPorAtivo() {
 
             Produtos ativo = em.persist(produto("Pneu A", true));
@@ -114,7 +108,6 @@ class RepositoriesTest {
         private ProdutoVaricaoRepository repository;
 
         @Test
-        @DisplayName("Deve encontrar variação ignorando caixa quando pesquisar parte da medida")
         void deveEncontrarVariacaoIgnorandoCaixa_quandoPesquisarParteDaMedida() {
 
             ProdutoVariacao alvo = em.persist(variacao("205/55R16"));
@@ -134,7 +127,6 @@ class RepositoriesTest {
         private CarrosRepository repository;
 
         @Test
-        @DisplayName("Deve indicar vínculo quando carro possuir variação")
         void deveIndicarVinculo_quandoCarroPossuirVariacao() {
 
             ProdutoVariacao variacao = em.persist(variacao("205/55R16"));
@@ -160,7 +152,6 @@ class RepositoriesTest {
         private PedidoRepository repository;
 
         @Test
-        @DisplayName("Deve persistir pedido com cliente quando salvar")
         void devePersistirPedidoComCliente_quandoSalvar() {
 
             Cliente cliente = em.persistAndFlush(cliente("Ana", "45900000001", PerfilUsuario.CLIENTE));

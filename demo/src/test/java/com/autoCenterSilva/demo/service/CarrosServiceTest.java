@@ -9,7 +9,6 @@ import com.autoCenterSilva.demo.exception.RegraNegocioException;
 import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
 import com.autoCenterSilva.demo.repository.CarrosRepository;
 import com.autoCenterSilva.demo.repository.ProdutoVaricaoRepository;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -41,7 +40,6 @@ class CarrosServiceTest {
     private CarrosService service;
 
     @Test
-    @DisplayName("Deve persistir carro com dados do request quando salvar carro")
     void devePersistirCarroComDadosDoRequest_quandoSalvarCarro() {
 
         CarroCreateRequest request = new CarroCreateRequest();
@@ -67,7 +65,6 @@ class CarrosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve adicionar variação ao carro quando ambos existirem")
     void deveAdicionarVariacaoAoCarro_quandoAmbosExistirem() {
 
         Carros carro = carro(2L);
@@ -81,7 +78,6 @@ class CarrosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve lançar não encontrado sem consultar variação quando carro não existir no vínculo")
     void deveLancarNaoEncontradoSemConsultarVariacao_quandoCarroNaoExistirNoVinculo() {
 
         given(carrosRepository.findById(2L)).willReturn(Optional.empty());
@@ -93,7 +89,6 @@ class CarrosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve manter carro sem variações quando variação não existir no vínculo")
     void deveManterCarroSemVariacoes_quandoVariacaoNaoExistirNoVinculo() {
 
         Carros carro = carro(2L);
@@ -107,7 +102,6 @@ class CarrosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve remover variação do carro quando excluir vínculo existente")
     void deveRemoverVariacaoDoCarro_quandoExcluirVinculoExistente() {
 
         Carros carro = carro(2L);
@@ -122,7 +116,6 @@ class CarrosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve excluir carro quando não possuir variações vinculadas")
     void deveExcluirCarro_quandoNaoPossuirVariacoesVinculadas() {
 
         given(carrosRepository.findById(9L)).willReturn(Optional.of(carro(9L)));
@@ -134,7 +127,6 @@ class CarrosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve recusar exclusão quando carro possuir variações vinculadas")
     void deveRecusarExclusao_quandoCarroPossuirVariacoesVinculadas() {
 
         given(carrosRepository.findById(9L)).willReturn(Optional.of(carro(9L)));
@@ -147,7 +139,6 @@ class CarrosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve lançar não encontrado quando excluir carro inexistente")
     void deveLancarNaoEncontrado_quandoExcluirCarroInexistente() {
 
         given(carrosRepository.findById(9L)).willReturn(Optional.empty());
@@ -157,7 +148,6 @@ class CarrosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve mapear todos os carros quando buscar carros")
     void deveMapearTodosOsCarros_quandoBuscarCarros() {
 
         Carros carro = carro(4L);

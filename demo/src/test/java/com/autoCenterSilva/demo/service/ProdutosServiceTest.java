@@ -1,6 +1,6 @@
 package com.autoCenterSilva.demo.service;
 
-import com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest;
+import com.autoCenterSilva.demo.dto.request.produto.ProdutoMedidaPesquisaRequest;
 import com.autoCenterSilva.demo.dto.request.produto.ProdutoCreateRequest;
 import com.autoCenterSilva.demo.dto.request.produto.ProdutoVariacaoRequest;
 import com.autoCenterSilva.demo.dto.response.produto.ProdutoCreateResponse;
@@ -12,7 +12,6 @@ import com.autoCenterSilva.demo.entity.Produtos;
 import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
 import com.autoCenterSilva.demo.repository.ProdutoVaricaoRepository;
 import com.autoCenterSilva.demo.repository.ProdutosRepository;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -44,7 +43,6 @@ class ProdutosServiceTest {
     private ProdutosService service;
 
     @Test
-    @DisplayName("Deve retornar produto quando buscar por ID existente")
     void deveRetornarProduto_quandoBuscarPorIdExistente() {
 
         Produtos produto = produto(2L);
@@ -56,7 +54,6 @@ class ProdutosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve persistir produto ativo com nome formatado quando salvar produto")
     void devePersistirProdutoAtivoComNomeFormatado_quandoSalvarProduto() {
 
         ProdutoCreateRequest request = new ProdutoCreateRequest();
@@ -80,7 +77,6 @@ class ProdutosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve montar medida completa e vincular produto quando salvar variação")
     void deveMontarMedidaCompletaEVincularProduto_quandoSalvarVariacao() {
 
         Produtos produto = produto(7L);
@@ -107,7 +103,6 @@ class ProdutosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve lançar não encontrado sem salvar quando produto da variação não existir")
     void deveLancarNaoEncontradoSemSalvar_quandoProdutoDaVariacaoNaoExistir() {
 
         ProdutoVariacaoRequest request = variacaoRequest();
@@ -120,7 +115,6 @@ class ProdutosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve retornar variações compatíveis quando pesquisar por medida")
     void deveRetornarVariacoesCompativeis_quandoPesquisarPorMedida() {
 
         ProdutoMedidaPesquisaRequest request = new ProdutoMedidaPesquisaRequest();
@@ -136,7 +130,6 @@ class ProdutosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve desvincular produto e salvar quando excluir variação existente")
     void deveDesvincularProdutoESalvar_quandoExcluirVariacaoExistente() {
 
         ProdutoVariacao variacao = variacaoSalva(4L, produto(7L));
@@ -149,7 +142,6 @@ class ProdutosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve lançar não encontrado quando excluir variação inexistente")
     void deveLancarNaoEncontrado_quandoExcluirVariacaoInexistente() {
 
         given(variacaoRepository.findById(4L)).willReturn(Optional.empty());
@@ -161,7 +153,6 @@ class ProdutosServiceTest {
     }
 
     @Test
-    @DisplayName("Deve mapear variações para listagem quando buscar produtos")
     void deveMapearVariacoesParaListagem_quandoBuscarProdutos() {
 
         given(variacaoRepository.findAll()).willReturn(List.of(variacaoSalva(12L, produto(7L))));

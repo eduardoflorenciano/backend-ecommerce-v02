@@ -20,7 +20,6 @@ import com.autoCenterSilva.demo.entity.Pedido;
 import com.autoCenterSilva.demo.entity.ProdutoPedido;
 import com.autoCenterSilva.demo.entity.ProdutoVariacao;
 import com.autoCenterSilva.demo.entity.Produtos;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -33,7 +32,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ResponseMappingTest {
 
     @Test
-    @DisplayName("Deve copiar dados públicos e sem senha quando mapear cliente para busca")
     void deveCopiarDadosPublicosESemSenha_quandoMapearClienteParaBusca() {
 
         Cliente cliente = cliente();
@@ -44,7 +42,6 @@ class ResponseMappingTest {
     }
 
     @Test
-    @DisplayName("Deve gerar mensagens personalizadas quando mapear cliente para respostas de ação")
     void deveGerarMensagensPersonalizadas_quandoMapearClienteParaRespostasDeAcao() {
 
         Cliente cliente = cliente();
@@ -61,7 +58,6 @@ class ResponseMappingTest {
     }
 
     @Test
-    @DisplayName("Deve copiar todos os campos quando mapear carro")
     void deveCopiarTodosOsCampos_quandoMapearCarro() {
 
         Carros carro = carro();
@@ -74,7 +70,6 @@ class ResponseMappingTest {
     }
 
     @Test
-    @DisplayName("Deve incluir carros compatíveis quando mapear variação para pesquisa")
     void deveIncluirCarrosCompativeis_quandoMapearVariacaoParaPesquisa() {
 
         ProdutoVariacao variacao = variacao();
@@ -93,7 +88,6 @@ class ResponseMappingTest {
     }
 
     @Test
-    @DisplayName("Deve usar dados do produto pai quando mapear variação para listagem e cadastro")
     void deveUsarDadosDoProdutoPai_quandoMapearVariacaoParaListagemECadastro() {
 
         ProdutoVariacao variacao = variacao();
@@ -111,7 +105,6 @@ class ResponseMappingTest {
     }
 
     @Test
-    @DisplayName("Deve mapear pedido e itens quando gerar respostas de pedido")
     void deveMapearPedidoEItens_quandoGerarRespostasDePedido() {
 
         Cliente cliente = cliente();
