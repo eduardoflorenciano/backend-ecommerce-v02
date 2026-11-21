@@ -1,4 +1,4 @@
-package com.autoCenterSilva.demo.dto.request;
+package com.autoCenterSilva.demo.dto.request.produto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;

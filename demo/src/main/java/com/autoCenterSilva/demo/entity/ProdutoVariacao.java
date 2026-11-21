@@ -13,6 +13,7 @@ import java.util.Set;
 @Setter
 @Table(name = "produtos_variacao")
 public class ProdutoVariacao {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -38,6 +39,9 @@ public class ProdutoVariacao {
     @Column(name = "quantidade_estoque")
     private Integer quantidadeEstoque;
 
+    @Column(name = "quantidade_reservada", nullable = false)
+    private Integer quantidadeReservada = 0;
+
     @ManyToOne
     @JoinColumn(name = "produto_id")
     private Produtos produto;
@@ -45,4 +49,11 @@ public class ProdutoVariacao {
     @ManyToMany(mappedBy = "variacoes")
     private Set<Carros> carros = new HashSet<>();
 
+    @Transient
+    public Integer getEstoqueDisponivel() {
+        int estoque = quantidadeEstoque != null ? quantidadeEstoque : 0;
+        int reservado = quantidadeReservada != null ? quantidadeReservada : 0;
+
+        return estoque - reservado;
+    }
 }

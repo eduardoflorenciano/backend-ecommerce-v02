@@ -1,18 +1,23 @@
 package com.autoCenterSilva.demo.service;
 
-import com.autoCenterSilva.demo.dto.request.ProdutoMedidaPesquisaRequest;
+import com.autoCenterSilva.demo.dto.request.MovimentacaoEstoqueRequest;
+import com.autoCenterSilva.demo.dto.request.produto.ProdutoMedidaPesquisaRequest;
 import com.autoCenterSilva.demo.dto.request.produto.ProdutoCreateRequest;
 import com.autoCenterSilva.demo.dto.request.produto.ProdutoVariacaoRequest;
+import com.autoCenterSilva.demo.dto.response.MovimentacaoEstoqueResponse;
 import com.autoCenterSilva.demo.dto.response.produto.ProdutoCreateResponse;
 import com.autoCenterSilva.demo.dto.response.produto.ProdutoListagemResponse;
 import com.autoCenterSilva.demo.dto.response.produto.ProdutoVariacaoPesquisaResponse;
 import com.autoCenterSilva.demo.dto.response.produto.ProdutoVariacaoResponse;
+import com.autoCenterSilva.demo.dto.response.produto.ProdutoEstoqueAdminResponse;
+import com.autoCenterSilva.demo.entity.HistoricoMovimentacaoEstoque;
 import com.autoCenterSilva.demo.entity.ProdutoVariacao;
 import com.autoCenterSilva.demo.entity.Produtos;
 import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
+import com.autoCenterSilva.demo.repository.HistoricoMovimentacaoEstoqueRepository;
 import com.autoCenterSilva.demo.repository.ProdutoVaricaoRepository;
 import com.autoCenterSilva.demo.repository.ProdutosRepository;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +29,11 @@ import java.util.Optional;
 public class ProdutosService {
     private final ProdutosRepository produtosRepository;
     private final ProdutoVaricaoRepository produtoVaricaoRepository;
+    private final HistoricoMovimentacaoEstoqueRepository historicoMovimentacaoEstoqueRepository;
 
-    public ProdutosService(ProdutosRepository produtosRepository, ProdutoVaricaoRepository produtoVaricaoRepository) {
+    public ProdutosService(ProdutosRepository produtosRepository, HistoricoMovimentacaoEstoqueRepository historicoMovimentacaoEstoqueRepository, ProdutoVaricaoRepository produtoVaricaoRepository) {
         this.produtosRepository = produtosRepository;
+        this.historicoMovimentacaoEstoqueRepository = historicoMovimentacaoEstoqueRepository;
         this.produtoVaricaoRepository = produtoVaricaoRepository;
     }
 
@@ -67,6 +74,15 @@ public class ProdutosService {
     }
 
     @Transactional
+    public List<ProdutoEstoqueAdminResponse> buscarEstoqueAdmin() {
+
+        return produtoVaricaoRepository.findByProdutoAtivoTrue()
+                .stream()
+                .map(ProdutoEstoqueAdminResponse::de)
+                .toList();
+    }
+
+    @Transactional
     public List<ProdutoVariacaoPesquisaResponse> pesquisarPorMedida(ProdutoMedidaPesquisaRequest request) {
         return produtoVaricaoRepository.findByMedidaContainingIgnoreCase(request.getMedida()).stream()
                 .map(ProdutoVariacaoPesquisaResponse::de)
@@ -81,6 +97,73 @@ public class ProdutosService {
         produtoVaricaoRepository.save(variacao);
         log.info("Variação {} desvinculada com sucesso", id);
     }
+
+    @Transactional(readOnly = true)
+    public List<MovimentacaoEstoqueResponse> buscarHistoricoMovimentacoes(Long idVariacao) {
+
+        return historicoMovimentacaoEstoqueRepository
+                .findByProdutoVariacaoIdOrderByDataMovimentacaoDesc(idVariacao)
+                .stream()
+                .map(MovimentacaoEstoqueResponse::de)
+                .toList();
+    }
+
+    @Transactional
+    public MovimentacaoEstoqueResponse movimentarEstoque(MovimentacaoEstoqueRequest request) {
+
+        ProdutoVariacao variacao = produtoVaricaoRepository
+                .findByIdParaReserva(request.getIdVariacao())
+                .orElseThrow(() ->
+                        new RuntimeException("Variação de produto não encontrada"));
+
+        String tipo = request.getTipo().trim().toUpperCase();
+
+        Integer estoqueAtual = variacao.getQuantidadeEstoque() != null
+                ? variacao.getQuantidadeEstoque() : 0;
+
+        Integer reservado = variacao.getQuantidadeReservada() != null
+                ? variacao.getQuantidadeReservada() : 0;
+
+        if (!tipo.equals("ENTRADA") && !tipo.equals("SAIDA")) {
+            throw new IllegalArgumentException(
+                    "Tipo de movimentação inválido. Utilize ENTRADA ou SAIDA");
+        }
+
+        if (tipo.equals("ENTRADA")) {
+
+            variacao.setQuantidadeEstoque(
+                    estoqueAtual + request.getQuantidade());
+
+        } else {
+
+            int disponivel = estoqueAtual - reservado;
+
+            if (request.getQuantidade() > disponivel) {
+                throw new IllegalArgumentException(
+                        "Estoque disponível insuficiente. Quantidade disponível: "
+                                + disponivel);
+            }
+
+            variacao.setQuantidadeEstoque(
+                    estoqueAtual - request.getQuantidade());
+        }
+
+        produtoVaricaoRepository.save(variacao);
+
+        HistoricoMovimentacaoEstoque movimentacao =
+                new HistoricoMovimentacaoEstoque();
+
+        movimentacao.setProdutoVariacao(variacao);
+        movimentacao.setTipo(tipo);
+        movimentacao.setQuantidade(request.getQuantidade());
+        movimentacao.setMotivo(request.getMotivo());
+
+        HistoricoMovimentacaoEstoque salva =
+                historicoMovimentacaoEstoqueRepository.save(movimentacao);
+
+        return MovimentacaoEstoqueResponse.de(salva);
+    }
+
 
     @Transactional
     public List<ProdutoListagemResponse> buscarProdutos() {

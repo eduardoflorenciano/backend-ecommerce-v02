@@ -28,7 +28,7 @@ public record PedidoCreateResponse(
 
         return new PedidoCreateResponse(
                 pedido.getId(),
-                pedido.getStatus(),
+                pedido.getStatus().name(),
                 pedido.getDataPedido(),
                 pedido.getValorTotal(),
                 pedido.getCliente().getNome(),
