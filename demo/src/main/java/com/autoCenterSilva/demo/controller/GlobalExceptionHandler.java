@@ -4,15 +4,20 @@ import com.autoCenterSilva.demo.dto.response.validacao.ErroValidacoesResponse;
 import com.autoCenterSilva.demo.exception.CredenciaisInvalidasException;
 import com.autoCenterSilva.demo.exception.RegraNegocioException;
 import com.autoCenterSilva.demo.exception.ResourceNotFoundException;
+import feign.FeignException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -22,6 +27,8 @@ public class GlobalExceptionHandler {
     static final String ERRO_VALIDACAO_CAMPOS = "Erro de validação de campos";
     static final String ERRO_REQUISICAO_INVALIDA = "Requisição inválida";
     static final String ERRO_NAO_AUTORIZADO = "Credenciais inválidas";
+    static final String ERRO_ACESSO_PROIBIDO = "Acesso proibido";
+    static final String ERRO_SERVICO_INDISPONIVEL = "Serviço externo indisponível";
     static final String ERRO_INTERNO = "Erro interno no servidor";
     static final String MENSAGEM_VALIDACAO_PADRAO = "Erro de validação nos campos";
 
@@ -39,10 +46,14 @@ public class GlobalExceptionHandler {
         return montarResposta(HttpStatus.BAD_REQUEST, ERRO_REGRA_NEGOCIO, ex.getMessage());
     }
 
-    @ExceptionHandler(CredenciaisInvalidasException.class)
-    public ResponseEntity<ErroValidacoesResponse> handleCredenciaisInvalidas(CredenciaisInvalidasException ex) {
+    @ExceptionHandler({CredenciaisInvalidasException.class, AuthenticationException.class})
+    public ResponseEntity<ErroValidacoesResponse> handleCredenciaisInvalidas(RuntimeException ex) {
         log.warn("Tentativa com credenciais inválidas");
-        return montarResposta(HttpStatus.UNAUTHORIZED, ERRO_NAO_AUTORIZADO, ex.getMessage());
+        return montarResposta(
+                HttpStatus.UNAUTHORIZED,
+                ERRO_NAO_AUTORIZADO,
+                "Nome, telefone ou senha incorretos!"
+        );
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -66,6 +77,32 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErroValidacoesResponse> handleMessageNotReadable(HttpMessageNotReadableException ex) {
         log.warn("Corpo da requisição ilegível");
         return montarResposta(HttpStatus.BAD_REQUEST, ERRO_REQUISICAO_INVALIDA, "Corpo da requisição ausente ou malformado");
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<ErroValidacoesResponse> handleAccessDenied(AccessDeniedException ex) {
+        log.warn("Acesso negado");
+        return montarResposta(HttpStatus.FORBIDDEN, ERRO_ACESSO_PROIBIDO,
+                "Você não possui permissão para acessar este recurso.");
+    }
+
+    @ExceptionHandler(FeignException.class)
+    public ResponseEntity<ErroValidacoesResponse> handleFeign(FeignException ex) {
+        log.warn("Falha ao consultar serviço externo (status {})", ex.status());
+        return montarResposta(HttpStatus.SERVICE_UNAVAILABLE, ERRO_SERVICO_INDISPONIVEL,
+                "Não foi possível consultar a cotação no momento. Tente novamente em instantes.");
+    }
+
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<ErroValidacoesResponse> handleRotaInexistente(NoResourceFoundException ex) {
+        return montarResposta(HttpStatus.NOT_FOUND, ERRO_RECURSO_NAO_ENCONTRADO,
+                "Rota inexistente");
+    }
+
+    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+    public ResponseEntity<ErroValidacoesResponse> handleMetodoNaoSuportado(HttpRequestMethodNotSupportedException ex) {
+        return montarResposta(HttpStatus.METHOD_NOT_ALLOWED, ERRO_REQUISICAO_INVALIDA,
+                "Método HTTP não suportado para esta rota");
     }
 
     @ExceptionHandler(Exception.class)

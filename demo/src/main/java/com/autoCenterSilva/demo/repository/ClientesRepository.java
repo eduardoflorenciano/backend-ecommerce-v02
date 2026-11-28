@@ -14,4 +14,5 @@ public interface ClientesRepository extends JpaRepository <Cliente, Long>{
     boolean existsByIdAndPedidosStatus(Long clienteId, StatusPedido statusPedido);
     boolean existsByNome(String nome);
     boolean existsByTelefone(String telefone);
+    Optional<Cliente> findByIdAndTelefone(Long id, String telefone);
 }

@@ -16,6 +16,7 @@ public record ProdutoVariacaoPesquisaResponse(
         Integer indiceCarga,
         BigDecimal preco,
         Integer quantidadeEstoque,
+        Integer quantidadeDisponivel,
         List<CarroBuscaResponse> carrosCompativeis
 ) {
 
@@ -34,6 +35,7 @@ public record ProdutoVariacaoPesquisaResponse(
                 variacao.getIndiceCarga(),
                 variacao.getPreco(),
                 variacao.getQuantidadeEstoque(),
+                Math.max(0, variacao.getEstoqueDisponivel()),
                 carros
         );
     }

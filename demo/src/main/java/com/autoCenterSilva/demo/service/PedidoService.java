@@ -1,3 +1,4 @@
+
 package com.autoCenterSilva.demo.service;
 
 import com.autoCenterSilva.demo.dto.request.pedido.PedidoCreateRequest;
@@ -28,6 +29,7 @@ import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Slf4j
@@ -53,12 +55,11 @@ public class PedidoService {
     }
 
     @Transactional
-    public PedidoCreateResponse salvar(PedidoCreateRequest request) {
+    public PedidoCreateResponse salvar(String telefone, PedidoCreateRequest request) {
 
-        Cliente cliente = clientesRepository.findById(request.getClienteId())
+        Cliente cliente = clientesRepository.findByTelefone(telefone)
                 .orElseThrow(() -> new ResourceNotFoundException(
-                        "Cliente com o ID " + request.getClienteId()
-                                + " não encontrado"
+                        "Cliente autenticado não encontrado"
                 ));
 
         if (cliente.getPerfil() == PerfilUsuario.DESATIVADO) {
@@ -79,7 +80,14 @@ public class PedidoService {
         List<ProdutoPedido> itens = new ArrayList<>();
         BigDecimal total = BigDecimal.ZERO;
 
-        for (ProdutoPedidoRequest itemRequest : request.getItens()) {
+        List<ProdutoPedidoRequest> itensOrdenados = request.getItens().stream()
+                .sorted(Comparator.comparing(
+                        ProdutoPedidoRequest::getProdutoVariacaoId,
+                        Comparator.nullsLast(Comparator.naturalOrder())
+                ))
+                .toList();
+
+        for (ProdutoPedidoRequest itemRequest : itensOrdenados) {
 
             ProdutoPedido item = reservarItem(itemRequest, pedido);
 
@@ -356,22 +364,38 @@ public class PedidoService {
     }
 
     @Transactional(readOnly = true)
-    public List<PedidoAdminResponse> buscarPedidosPorCliente(Long clienteId) {
+    public List<PedidoAdminResponse> buscarPedidosDoUsuario(String telefone) {
+
+        Cliente cliente = clientesRepository.findByTelefone(telefone)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Cliente autenticado não encontrado"
+                ));
 
         return pedidoRepository
-                .findAllByCliente_IdOrderByDataPedidoDesc(clienteId)
+                .findAllByCliente_IdOrderByDataPedidoDesc(cliente.getId())
                 .stream()
                 .map(PedidoAdminResponse::de)
                 .toList();
     }
 
     @Transactional
-    public boolean cancelarPedido(Long pedidoId, PedidoCancelarRequest request) {
+    public boolean cancelarPedido(
+            Long pedidoId,
+            PedidoCancelarRequest request,
+            String telefone,
+            boolean equipe
+    ) {
 
         Pedido pedido = pedidoRepository.findByIdParaAtualizacao(pedidoId)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Pedido com o ID " + pedidoId + " não encontrado"
                 ));
+
+        if (!equipe && !pedido.getCliente().getTelefone().equals(telefone)) {
+            throw new ResourceNotFoundException(
+                    "Pedido com o ID " + pedidoId + " não encontrado"
+            );
+        }
 
         if (pedido.getStatus() != StatusPedido.SOLICITADO
                 && pedido.getStatus() != StatusPedido.CONFIRMADO) {

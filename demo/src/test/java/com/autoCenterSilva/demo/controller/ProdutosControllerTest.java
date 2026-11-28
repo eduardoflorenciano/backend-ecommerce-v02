@@ -163,7 +163,7 @@ class ProdutosControllerTest {
 
         CarroBuscaResponse carro = new CarroBuscaResponse(2L, "Fiat", "Uno", 2015, "1.0");
         given(produtosService.pesquisarPorMedida(any())).willReturn(List.of(new ProdutoVariacaoPesquisaResponse(
-                12L, "Pneu", "175/70R14", 175, 70, 14, 88, new BigDecimal("299.90"), 8, List.of(carro))));
+                12L, "Pneu", "175/70R14", 175, 70, 14, 88, new BigDecimal("299.90"), 8, 8, List.of(carro))));
 
         ResultActions resposta = mvc.perform(post("/api/produtos/pesquisar")
                 .contentType(MediaType.APPLICATION_JSON).content("{\"medida\":\"175/70\"}"));

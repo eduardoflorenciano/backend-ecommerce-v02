@@ -9,6 +9,7 @@ import com.autoCenterSilva.demo.service.PedidoService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,8 +25,12 @@ public class PedidosController {
     }
 
     @PostMapping("/criar")
-    public ResponseEntity<PedidoCreateResponse> salvarPedido(@Valid @RequestBody PedidoCreateRequest request) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(pedidoService.salvar(request));
+    public ResponseEntity<PedidoCreateResponse> salvarPedido(
+            @Valid @RequestBody PedidoCreateRequest request,
+            Authentication authentication
+    ) {
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(pedidoService.salvar(authentication.getName(), request));
     }
 
     @GetMapping("/listar")
@@ -33,18 +38,31 @@ public class PedidosController {
         return ResponseEntity.ok(pedidoService.buscarPedidos());
     }
 
-    @GetMapping("/cliente/{clienteId}")
-    public ResponseEntity<List<PedidoAdminResponse>> listarPedidosCliente(@PathVariable Long clienteId) {
-
+    @GetMapping("/meus")
+    public ResponseEntity<List<PedidoAdminResponse>> listarMeusPedidos(
+            Authentication authentication
+    ) {
         return ResponseEntity.ok(
-                pedidoService.buscarPedidosPorCliente(clienteId)
+                pedidoService.buscarPedidosDoUsuario(authentication.getName())
         );
     }
 
     @PutMapping("/{id}/cancelar")
-    public ResponseEntity<String> cancelarPedido( @PathVariable Long id, @Valid @RequestBody PedidoCancelarRequest request) {
+    public ResponseEntity<String> cancelarPedido(
+            @PathVariable Long id,
+            @Valid @RequestBody PedidoCancelarRequest request,
+            Authentication authentication
+    ) {
 
-        boolean cancelado = pedidoService.cancelarPedido(id, request);
+        boolean equipe = authentication.getAuthorities().stream()
+                .anyMatch(authority ->
+                        authority.getAuthority().equals("ROLE_ADM")
+                                || authority.getAuthority().equals("ROLE_ATENDENTE")
+                );
+
+        boolean cancelado = pedidoService.cancelarPedido(
+                id, request, authentication.getName(), equipe
+        );
 
         if (!cancelado) {
             return ResponseEntity.status(HttpStatus.GONE)
